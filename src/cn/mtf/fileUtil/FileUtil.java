@@ -3,6 +3,7 @@ package cn.mtf.fileUtil;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Stack;
 
 /**
@@ -72,6 +73,21 @@ public class FileUtil {
                 System.out.println(i + ">" + file[i].getName());
             }
         }
+    }
+
+    public void seperate(){
+        File file = fileStack.peek();
+        if (file.isDirectory()) {
+            System.out.println(">please select a file");
+            return;
+        }
+        FileSeperator seperator = new FileSeperator(file);
+        System.out.println("file size = " + file.length() / FileSeperator.MB);
+        System.out.println(">size you want(MB)");
+        Scanner scanner = new Scanner(System.in);
+        String size = scanner.nextLine();
+        int sizeInt = Integer.valueOf(size);
+        seperator.seperate(sizeInt * FileSeperator.MB);
     }
 
 }

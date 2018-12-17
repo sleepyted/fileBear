@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="fileBear:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/fileBear_jar</output-path>
+    <root id="archive" name="fileBear.jar">
+      <element id="module-output" name="fileBear" />
+    </root>
+  </artifact>
+</component>

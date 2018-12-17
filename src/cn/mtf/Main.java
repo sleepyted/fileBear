@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         FileUtil fileUtil = new FileUtil();
@@ -18,7 +19,6 @@ public class Main {
             System.out.print(">");
             //read
             String action = scanner.nextLine();
-
             //execute
             try {
                 int act = Integer.parseInt(action);
@@ -34,12 +34,16 @@ public class Main {
                     case "ls":
                         fileUtil.printChilden();
                         break;
+                    case "sep":
+                        fileUtil.seperate();
+                        break;
                     case "quit":
                         quit = true;
+                        break;
+                    case "h":
                         break;
                 }
             }
         } while (!quit);
-
     }
 }
